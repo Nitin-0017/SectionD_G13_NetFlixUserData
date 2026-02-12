@@ -7,7 +7,7 @@ User Engagement & Revenue Optimization Analysis for a Streaming Platform
 
 ## 1. Initial Dataset
 
-I started with the file `Raw_dataset.csv`.
+I started with the file `D_G-13__Netflix User Subscription & Retention Analytics Dashboard” - RawData`.
 
 After cleaning and filtering the data properly, the final dataset was reduced to around 5,000 valid rows.
 

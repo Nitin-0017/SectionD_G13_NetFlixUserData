@@ -82,12 +82,86 @@ These columns were removed to reduce unnecessary data and keep the dataset focus
 
 ---
 
-## 5. Final Dataset
+## 5. Additional Data Standardization
 
-The final cleaned dataset includes only the columns needed for:
+After initial cleaning, further preprocessing was performed to make the dataset consistent for analysis and visualization.
 
-- User engagement analysis  
-- Revenue analysis  
-- Subscription behavior  
-- Content performance  
-- Demographic insights  
+### Duplicate Records
+
+Duplicate rows were identified and removed to prevent repeated viewing activity from biasing engagement metrics.
+
+---
+
+### Missing Value Treatment
+
+Some categorical and numeric columns still contained missing values:
+
+* **gender** → filled using mode imputation (most frequent value: Female)
+* **household_size** → filled using median imputation
+
+Rows were not deleted in this step to preserve dataset size and distribution.
+
+---
+
+### Text Standardization
+
+Categorical columns were standardized by:
+
+* Removing extra spaces
+* Converting to consistent case
+* Normalizing country names (e.g., USA)
+
+Affected columns:
+`subscription_plan, device_type, country, content_type, genre_primary`
+
+---
+
+### Boolean Standardization
+
+The columns:
+
+* is_active
+* is_netflix_original
+
+were standardized to consistent TRUE/FALSE values to prevent category mismatch during filtering and pivot analysis.
+
+---
+
+### Content Rating Transformation
+
+The **rating** column contains certification labels (G, PG, PG-13, TV-14, TV-MA, etc.).
+For better interpretability, a derived column **maturity_level** was created:
+
+| Rating          | Maturity Level |
+| --------------- | -------------- |
+| G, TV-Y, TV-Y7  | Kids           |
+| PG, TV-PG       | Family         |
+| PG-13, TV-14    | Teens          |
+| R, TV-MA, NC-17 | Adult          |
+
+This allows meaningful audience segmentation and cleaner visualization.
+
+---
+
+### Data Type Formatting
+
+All columns were converted to appropriate formats:
+
+* Date → watch_date
+* Numeric → duration, progress, age, spend, imdb_rating, household_size
+* Text → categorical attributes
+
+---
+
+## 6. Final Clean Dataset
+
+After preprocessing and standardization, the dataset is consistent and analysis-ready.
+
+* Final rows: **5025**
+* No critical missing values
+* Standardized categories
+* Logical numeric ranges
+* Ready for visualization and modeling
+
+---
+

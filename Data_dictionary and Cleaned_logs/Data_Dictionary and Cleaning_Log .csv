@@ -1,0 +1,47 @@
+Column Name,Meaning,Data Type,Example,Issue Found,Cleaning Action,Justification
+,,,,,,
+session_id,unique identifier for each viewing session,string,session_090073,Too granular and not required for kpi analysis,Removed,Session -level identifiers add unnecessary granularity and  not contribute to engagement or revenue KPIs
+user_id,unique identifier for each user,string,user_08497,"Personal identifier ,not analytically meaningful",Removed,"Dashboard focuses on aggregated user behaviour,not individual identification;removal also avoids personal data usage "
+movie_id,unique identifier for each movie or show ,string,movie_0369,"Personal identifier ,not analytically meaningful",Removed,"Content analysis is performed using attributes like genre,rating and release_year rather than internal IDs"
+watch_date,Date when the content was watched,Data,11/7/25,some inconsistent or missing data values,Standardized date format and removed invalid entries,Required for time-based engagement analysis and trend identification
+device_type ,Type of device used to watch content ,Text(string),Mobile,"inconsistent naming (eg: mobile,Mobile)",Standardized values using consistent labels,Important for analyzing engagement across devices
+watch_duration_minutes,Total minutes spent watching content,Numeric,95,Outliers and zero/invalid values,Ensured numeric format and removed invalid entries,Core engagement metric directly linked to user activity
+progress_percentage,percentage of content completed ,Numeric (%),87,Values outside value range(0-100),filtered invalid values and standardized percentages,Helps measure content completion and engagement quality
+action,User interaction type during session,Text(string),Play,Minor inconsistencies in labels,Standardized action categories,Useful for understanding user interaction patterns
+quality,Streaming  qualityof  content,Text(string),HD,Not required for engagement for revenue analysis,Removed,Streaming quality does not significantly impact subscription-level KPIs
+location_country,country from where content was accessed,Text(string),India,Duplication of exisiting country column,Removed,Country-level analysis already covered by primary country column
+is_download,indicates if content was downloaded,Boolean ,TRUE,Not relevant to KPIs engagement,Removed,Download behavior does not impact engagement or revenue metrics used in this dashboard
+user_rating,Rating given by user to content,Numeric,4,Very high missing values,Removed,Column contained a large number of null values(IMDb rating already represents content quality)
+email,User email address,Text(string),robertsmith@example.com,Personal identifiable information (PII),Removed,Removed to ensure privacy and because it has no analytical value for dashboard KPIs
+first_name,User's first name,Text(string),Aarav,"Personal data, not analytically useful",Removed,Individual names are not required for aggregate analysis and dashboards
+last_name,User's last name,Text(string),Sharma,"Personal data, not analytically useful",Removed,Removed to avoid use of personal identifiers and focus on aggregated insights
+age,age of the user,Numeric,27,Outliers and zero/invalid values,Filtered invalid ages and retained realistic range,Used for demographic segmentation and engagement analysis
+gender,gender of the user,Text(string),Female,Inconsistent category labels,"category labels
+Standardized gender values",Used for demographic segmentation and engagement analysis
+country,country of the user,Text(string),India,Inconsistent Capitalization ,Standardized country names,Enables geographic analysis of engagement and revenue
+state_province,state of the user,Text(string),Maharashtra,Too granular and not required for kpi analysis,Removed,Country-level analysis is sufficient for executive dashboard
+city,city of the user,Text(string),Mumbai,Excessively Granular,Removed,City-level detail not required for engagement or revenue KPIs
+subscription_plan,User’s subscription tier,date,Premium,Inconsistent plan names,Standardized plan categories,Core revenue and subscription analysis metric
+subscription_start_date,Date when subscription started,Boolean ,2022-05-01,Not required for current analysis,Removed,Churn analysis was not part of project scope
+is_active,Indicates if user is currently active,Numeric,TRUE,Minor inconsistencies,Standardized Boolean values,Key indicator for retention and engagement analysis
+monthly_spend,Monthly subscription amount,Numeric,799,Non-numeric formatting,Converted to numeric format,Primary revenue metric for dashboard KPIs
+primary_device,Main device used by user,Text(string),Mobile,Duplication of exisiting country column,Removed,Device analysis handled using device_type column
+household_size,No of people in household,Numeric,4,Some missing values,Cleaned and retained valid values,Helps understand shared account behavior
+created_at,Timestamp  when user record was created,DateTime,2023-01-15 10:32,Technical meta-data,Removed,Not required for engagement or revenue analysis; dashboard focuses on viewing behavior
+title,Name of movie or show,Text(string),Stranger Things,"High cardinality ,not required for KPI analysis",Removed,"Dashboard focuses on content attributes (genre, type, ratings) rather than individual titles"
+content_type,Format of content ,Text(string),Movie,Inconsistent labels,Standardized categories,Used to analyze engagement and performance across content formats
+genre_primary,Primary genre of content ,Text(string),Thriller,Inconsistent Text formatting,Cleaned text and standardized values,Core driver for content engagement and recommendation analysis
+genre_secondary,Secondary genre classification,Text(string),Drama ,high missing values and low impact,Removed,Primary genre provides sufficient insight; secondary genre adds complexity without value
+release_year,year or release,Numeric,2021,Minor inconsistencies,Converted to numeric format,Enables trend analysis by content age
+duration_minutes,total duration of content,Numeric,120,Non numeric entries,Converted to numeric format,Required to evaluate engagement vs content length
+rating,Content certification rating,Text(string),PG-13,Hard to interpret for analysis,Transformed into maturity_level,Simplifies audience segmentation and improves dashboard clarity
+language,Primary langauge of content ,Text(string),English,Inconsistent text case,Standardized values,Supports content preference and localization analysis
+country_of_origin,Country where content was produced,Text(string),USA,Minor inconsistencies,Converted to numeric format,Helps analyze regional content performance
+imdb_rating,IMdb rating of content,Numeric,8.4,Stored as text,Converted to numeric format,Proxy for content quality in engagement analysis
+production_budget,Cost to produce content,Numeric,50M,high missing values and low impact,Removed,"Budget analysis relates to studio finance, not streaming engagement or subscription revenue"
+box_office_revenue,Theatrical revenue earned,Numeric,300M,Irrelevant to streaming model ,Removed,"Platform revenue comes from subscriptions, not box office"
+number_of_seasons,Number of seasons for a tv-series,Numeric,3,"high missing values,only applicable to series ",Removed,Not relevant for movies and causes inconsistency; not required for engagement or revenue KPIs
+number_of_episodes,Total episodes in a series,Numeric,24,Large number of  null vlaues only applicable to series,Removed,"Dashboard focuses on high-level engagement metrics, not episodic structure"
+is_netflix_original,Indicates whether a series is netflix original ,Boolean ,TRUE,inconsistent TRUE/FALSE values,Standardized boolean format,Used to compare engagement and performance between original and non-original content
+added_to_platform,Date when content was added to platform ,Date,2022-08-10,not required for KPIs,Removed,"Content release_year is sufficient ,this column is not required not adding any extra value"
+content_warning,Indicates sensitive content warnings,Text(string),Violence,Not used in analysis for KPIs,Removed,"Does not contribute to engagement, retention, or revenue insights"

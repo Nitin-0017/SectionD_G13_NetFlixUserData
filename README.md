@@ -111,6 +111,8 @@ The dataset used in this project is **“Netflix 2025: User Behavior Dataset (21
 **Access link:**  
 [https://www.kaggle.com/datasets/sayeeduddin/netflix-2025user-behavior-dataset-210k-records](https://www.kaggle.com/datasets/sayeeduddin/netflix-2025user-behavior-dataset-210k-records)
 
+<img width="1536" height="1024" alt="dictionary" src="https://github.com/user-attachments/assets/a02f70c5-4d38-429d-8cd5-22415dd69ba8" />
+
 Data Structure
 
 The raw dataset consists of multiple CSV files capturing:
@@ -230,6 +232,7 @@ This layout allows users to move from **high-level KPIs to detailed behavioral i
 
 To enable interactive exploration, the dashboard includes slicers and filters such as:
 
+
 * Subscription Plan
 
 * Country
@@ -249,3 +252,5 @@ These filters allow stakeholders to:
 * Analyze engagement patterns for targeted decision-making
 
 All charts update dynamically based on filter selection.
+
+

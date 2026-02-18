@@ -253,4 +253,4 @@ These filters allow stakeholders to:
 
 All charts update dynamically based on filter selection.
 
-
+<img width="382" height="842" alt="Dashboard" src="https://github.com/user-attachments/assets/002f4767-5f28-41b7-82cb-3d14f86d95b1" />

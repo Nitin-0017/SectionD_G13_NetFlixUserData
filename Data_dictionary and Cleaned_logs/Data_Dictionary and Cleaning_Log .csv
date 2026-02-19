@@ -45,3 +45,4 @@ number_of_episodes,Total episodes in a series,Numeric,24,Large number of  null v
 is_netflix_original,Indicates whether a series is netflix original ,Boolean ,TRUE,inconsistent TRUE/FALSE values,Standardized boolean format,Used to compare engagement and performance between original and non-original content
 added_to_platform,Date when content was added to platform ,Date,2022-08-10,not required for KPIs,Removed,"Content release_year is sufficient ,this column is not required not adding any extra value"
 content_warning,Indicates sensitive content warnings,Text(string),Violence,Not used in analysis for KPIs,Removed,"Does not contribute to engagement, retention, or revenue insights"
+

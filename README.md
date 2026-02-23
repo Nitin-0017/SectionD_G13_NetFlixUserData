@@ -228,6 +228,7 @@ The dashboard is structured into clearly separated sections for intuitive naviga
 
 This layout allows users to move from **high-level KPIs to detailed behavioral insights** smoothly.
 
+
 ## Filters & Drilldowns
 
 To enable interactive exploration, the dashboard includes slicers and filters such as:
@@ -253,4 +254,4 @@ These filters allow stakeholders to:
 
 All charts update dynamically based on filter selection.
 
-<img width="382" height="842" alt="Dashboard" src="https://github.com/user-attachments/assets/002f4767-5f28-41b7-82cb-3d14f86d95b1" />
+<img width="338" height="676" alt="Screenshot 2026-02-23 at 11 07 18 AM" src="https://github.com/user-attachments/assets/e5309208-34c3-4534-b346-71781bb80731" />

@@ -11,7 +11,7 @@
 
 Section-D G-13
 
-1\.  Palak Gupta (Project Lead)  
+1\.  Palak Gupta  
 2\.  Piyush Raj  
 3\.  Nitin Kumar  
 4\.  Abhijeet   
